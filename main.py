@@ -24,9 +24,9 @@ def index():
         superscript=form.superscript.data
         process=subprocess.run(["./main",first,superscript],capture_output=True)
         string=process.CompletedProcess.stdout
-        return render_template("index.html",string=string)
+        return render_template("index.html",form=form,string=string)
     else:
-        return render_template("index.html")
-        
+        return render_template("index.html",form=form)
+
 if __name__=='__main__':
     app.run()
