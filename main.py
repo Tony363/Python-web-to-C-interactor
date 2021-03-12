@@ -24,7 +24,7 @@ class InputForm(FlaskForm):
     superscript=IntegerField('',validators=[DataRequired()])
     submit=SubmitField('Submit')
 
-@app.route('/',methods=['GET'])
+@app.route('/',methods=['GET','POST'])
 def index():
     form=InputForm()
     if form.is_submitted():
