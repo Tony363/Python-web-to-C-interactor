@@ -15,9 +15,7 @@ import subprocess
 app=Flask(__name__)
 bootstrap=Bootstrap(app)
 
-
 app.config['SECRET_KEY'] = SECRET_KEY
-
 
 class InputForm(FlaskForm):
     first=IntegerField('',validators=[DataRequired()])
