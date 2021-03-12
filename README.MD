@@ -10,3 +10,4 @@
 
 * `SECRET_KEY` must be replaced by a permanent value and store in a non-public file before deployment.
 * Use `os.urandom(32)` in Python is a good way to generate a secret key.
+* The directory of the C program could be modify , `./main` is default. 
