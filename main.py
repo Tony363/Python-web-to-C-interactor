@@ -13,3 +13,10 @@ class InputForm(FlaskForm):
     superscript=IntegerField('',validators=[DataRequired()])
     submit=SubmitField('Submit')
 
+@app.route('/',methods=['GET'])
+def index():
+    form=InputForm()
+    if form.is_submitted():
+        pass
+    else:
+        return render_template("index.html")
