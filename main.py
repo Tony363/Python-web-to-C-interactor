@@ -1,9 +1,8 @@
-from flask import Flask, request,  render_template, url_for, redirect
+from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField,SelectField,PasswordField
-from wtforms.fields.core import BooleanField
-from wtforms.fields.html5 import DateTimeField,IntegerField
+from wtforms import StringField, SubmitField
+from wtforms.fields.html5 import IntegerField
 from wtforms.validators import DataRequired
 
 import os
