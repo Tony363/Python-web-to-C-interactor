@@ -5,6 +5,9 @@ from wtforms import StringField, SubmitField,SelectField,PasswordField
 from wtforms.fields.core import BooleanField
 from wtforms.fields.html5 import DateTimeField,IntegerField
 from wtforms.validators import DataRequired
+
+import subprocess
+
 app=Flask(__name__)
 bootstrap=Bootstrap(app)
 
@@ -17,6 +20,10 @@ class InputForm(FlaskForm):
 def index():
     form=InputForm()
     if form.is_submitted():
-        pass
+        first=form.first.data
+        superscript=form.superscript.data
+        process=subprocess.run(["./main",first,superscript],capture_output=True)
+        string=process.CompletedProcess.stdout
+        return render_template("index.html",string=string)
     else:
         return render_template("index.html")
