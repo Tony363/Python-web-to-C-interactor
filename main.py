@@ -6,10 +6,18 @@ from wtforms.fields.core import BooleanField
 from wtforms.fields.html5 import DateTimeField,IntegerField
 from wtforms.validators import DataRequired
 
+import os
+SECRET_KEY = os.urandom(32)
+
+
 import subprocess
 
 app=Flask(__name__)
 bootstrap=Bootstrap(app)
+
+
+app.config['SECRET_KEY'] = SECRET_KEY
+
 
 class InputForm(FlaskForm):
     first=IntegerField('',validators=[DataRequired()])
