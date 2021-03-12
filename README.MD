@@ -7,3 +7,6 @@
 * The compiled C program was placed in root by default. However, adjest is also avaliable if needed.
 
 * **The program has not been tested yet.**
+
+* `SECRET_KEY` must be replaced by a permanent value and store in a non-public file before deployment.
+* Use `os.urandom(32)` in Python is a good way to generate a secret key.
